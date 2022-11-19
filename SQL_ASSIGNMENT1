@@ -15,7 +15,7 @@ insert into shopping_history values
 
 select * from shopping_history;   
    
-   ANSWER:
+   
    
    select product,
    sum(quantity*unit_price) as total_price 
@@ -24,7 +24,7 @@ select * from shopping_history;
    -----------------------------------------
    
    
-   --TASk2
+   --TASK2
    
      create or replace table phones (
 name varchar(30) not null unique,
@@ -153,6 +153,8 @@ with new_table as (select sum(amount) as total_trans, count(amount) as no_of_tra
 from transactions where amount<0 group by year(date),month(date)                  
 having total_trans<=-100 and no_of_trans>=3)
 select sum(amount)-(5*(12-(select count(*) from new_table))) as balance from transactions;
+---------------------------------------------------------------------------------------------
+
 
 --TASK3.3
 
@@ -172,7 +174,7 @@ from transactions where amount<0 group by year(date),month(date)
 having total_trans<=-100 and no_of_trans>=3)
 select sum(amount)-(5*(12-(select count(*) from new_table))) as balance from transactions;
 
-
+-------------------------------------------------------------------------------------------
 
 
 
